@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shell-sets Algorithm Visualiser</title>
+  <style>
+    body {
+      padding: 0;
+      margin: 0;
+    }
+  </style>
+  <script src="./p5.js"></script>
+  <!-- <script src="../addons/p5.sound.js"></script> -->
+  <style>
+    table{
+      margin-top: 5vh;
+    }
+    table, td {
+      border: 1px solid black;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <div id="main" style="display: flex;">
+      <div id="canvasDiv"></div>
+      <div id="sidebar" style="display: flex;flex-direction: column;">
+        <button id="next">Next (Run Step-by-step)</button>
+        <div id="runSpeedDiv" style="border-style: solid;border-width: 1px;display: flex;">
+          <div>Run Speed </div>
+          <input type="range" id="runSpeed" min="0" max="5000">
+        </div>
+        <button id="run">Run Continously</button>
+        <div style="border-style: solid;border-width: 1px;display: flex;">
+          <div>Number of points </div>
+          <input type="range" id="numSlider" min="0" max="250" oninput="updateDumpEl(this.value)">
+        </div>
+        <button id="refresh">Generate Random Point Set/Refresh</button>
+        <div id="statistics"></div>
+        <div id="dump"></div>
+        <table>
+          <tr><td>Statistics</td></tr>
+          <tr><td>Iteration No.</td><td>Good Sample</td><td>No. of outside points</td><td>Weight of outside points</td></tr>
+          <!-- <tr><td></td><td></td><td></td><td></td></tr> -->
+        </table>
+        <br>
+      </div>
+    </div>
+  </main>
+  <script src="helper.js"></script>
+  <script src="sketch.js"></script>
+</body>
+
+</html>
